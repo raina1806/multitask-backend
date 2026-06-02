@@ -1,0 +1,22 @@
+# environment variables — never commit these
+.env
+
+# virtual environment — never commit this
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
