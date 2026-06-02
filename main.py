@@ -3,9 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 import psycopg2
 from psycopg2.extras import RealDictCursor
 from dotenv import load_dotenv
-from pydantic import BaseModel
-import os
 from pydantic import BaseModel, field_validator
+import os
 
 load_dotenv()
 
@@ -23,7 +22,8 @@ try:
         host=os.getenv("DB_HOST"),
         database=os.getenv("DB_NAME"),
         user=os.getenv("DB_USER"),
-        password=os.getenv("DB_PASSWORD")
+        password=os.getenv("DB_PASSWORD"),
+        port=os.getenv("DB_PORT")
     )
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     print("Database connected successfully")
