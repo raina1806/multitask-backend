@@ -14,11 +14,12 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://multitask-frontend.vercel.app",  # your Vercel URL
+        "https://multitask-frontend-lovat.vercel.app",
     ],
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 try:
     conn = psycopg2.connect(
         host=os.getenv("DB_HOST"),
