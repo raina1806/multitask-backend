@@ -12,11 +12,13 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # we'll restrict this after getting Vercel URL
+    allow_origins=[
+        "http://localhost:5173",
+        "https://multitask-frontend.vercel.app",  # your Vercel URL
+    ],
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 try:
     conn = psycopg2.connect(
         host=os.getenv("DB_HOST"),
